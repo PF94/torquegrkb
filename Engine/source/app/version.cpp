@@ -48,13 +48,14 @@ const char* getAppVersionString()
    return TORQUE_APP_VERSION_STRING;
 }
 
-/// TGE       0001
-/// TGEA      0002
-/// TGB       0003
-/// TGEA 360  0004
-/// TGE  WII  0005
-/// Torque 3D 0006
-/// Torque 3D MIT 0007
+/// TGE				0001
+/// TGEA			0002
+/// TGB				0003
+/// TGEA 360		0004
+/// TGE WII 		0005
+/// Torque 3D		0006
+/// Torque 3D MIT 	0007
+/// grkb Edition	0010
 
 const char* getEngineProductString()
 {
@@ -77,6 +78,8 @@ const char* getEngineProductString()
          return "Torque 3D";
       case 0007:
 	     return "Torque 3D MIT";
+      case 0010:
+	     return "Torque3D - grkb Edition";
 		 
       default:
          return "Torque Engine";
@@ -86,7 +89,7 @@ const char* getEngineProductString()
 
 const char* getCompileTimeString()
 {
-   return __DATE__ " at " __TIME__;
+   return "Compiled " __DATE__ " at " __TIME__;
 }
 //----------------------------------------------------------------
 

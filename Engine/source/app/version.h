@@ -27,24 +27,29 @@
 /// base engine source we need a way to differentiate which product
 /// this particular game is using.
 ///
-/// TGE       0001
-/// TGEA      0002
-/// TGB       0003
-/// TGEA 360  0004
-/// TGE WII   0005
-/// Torque 3D 0006
-/// Torque 3D MIT 0007
-#define TORQUE_ENGINE_PRODUCT      0007
+/// A "grkb" edition thing has been added due to the fact that this
+/// could be used to report if Brickogame is running on the right
+/// Torque Engine.
+///
+/// TGE				0001
+/// TGEA			0002
+/// TGB				0003
+/// TGEA 360		0004
+/// TGE WII			0005
+/// Torque 3D		0006
+/// Torque 3D MIT	0007
+/// grkb Edition	0010
+#define TORQUE_ENGINE_PRODUCT      0010
 
 /// This is our global version number for the engine source code that
 /// we are using. See <game>/source/torqueConfig.h for the game's source
 /// code version, the game name, and which type of game it is (TGB, TGE, TGEA, etc.).
 ///
 /// Version number is major * 1000 + minor * 100 + revision * 10.
-#define TORQUE_GAME_ENGINE          3900
+#define TORQUE_GAME_ENGINE          3999
 
 /// Human readable engine version string.
-#define TORQUE_GAME_ENGINE_VERSION_STRING  "3.9.0"
+#define TORQUE_GAME_ENGINE_VERSION_STRING  "3.10.2"
 
 /// Gets the engine version number.  The version number is specified as a global in version.cc
 U32 getVersionNumber();
