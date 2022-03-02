@@ -590,12 +590,6 @@ bool StandardMainLoop::doMainLoop()
          bool newFocus = ( WindowManager->getFocusedWindow() != NULL );
          if(lastFocus != newFocus)
          {
-#ifndef TORQUE_SHIPPING
-            Con::printf("Window focus status changed: focus: %d", newFocus);
-            if (!newFocus)
-               Con::printf("  Using background sleep time: %u", Platform::getBackgroundSleepTime());
-#endif
-
 #ifdef TORQUE_OS_MAC
             if (newFocus)
                WindowManager->getFirstWindow()->show();
