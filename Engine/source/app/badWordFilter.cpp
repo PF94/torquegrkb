@@ -78,6 +78,8 @@ void BadWordFilter::create()
    gBadWordFilter->addBadWord("whore");
    gBadWordFilter->addBadWord("goddamn");
    gBadWordFilter->addBadWord("asshole");
+   gBadWordFilter->addBadWord("nigga");
+   gBadWordFilter->addBadWord("kys");
 }
 
 void BadWordFilter::destroy()

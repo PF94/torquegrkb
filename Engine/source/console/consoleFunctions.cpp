@@ -2796,3 +2796,10 @@ DefineEngineFunction( getMaxDynamicVerts, S32, (),,
 {
    return MAX_DYNAMIC_VERTS / 2;
 }
+
+DefineEngineFunction(urlEnc, void, (const char* address), ,
+	"ok so this is placeholder shit")
+{
+	Con::errorf("not actually implemented");
+	return;
+}
