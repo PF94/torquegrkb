@@ -42,6 +42,8 @@
 /// @{
 class GuiSwatchCtrl : public GuiContainer
 {
+	ColorI mFillColor;
+
 private:
    typedef GuiContainer Parent;
 
@@ -49,6 +51,7 @@ public:
    // Constructor/Destructor/ConObject Declaration
    GuiSwatchCtrl();
    virtual ~GuiSwatchCtrl();
+   static void initPersistFields();
 
    DECLARE_CONOBJECT(GuiSwatchCtrl);
 

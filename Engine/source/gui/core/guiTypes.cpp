@@ -640,7 +640,7 @@ void GuiControlProfile::incLoadCount()
 {
    if( !mLoadCount )
    {
-      #ifdef DEBUG_SPEW
+      #ifdef DEBUG
       Platform::outputDebugString( "[GuiControlProfile] Loading profile %i:%s (%s:%s)",
          getId(), getClassName(), getName(), getInternalName() );
       #endif

@@ -73,30 +73,39 @@ GuiSwatchCtrl::GuiSwatchCtrl()
    mIsContainer = true;
 }
 
+void GuiSwatchCtrl::initPersistFields()
+{
+	addGroup("Colors");
+	addField("Color", TypeColorI, Offset(mFillColor, GuiSwatchCtrl), "Color for the background of the control.");
+	endGroup("Colors");
+
+	Parent::initPersistFields();
+}
+
 GuiSwatchCtrl::~GuiSwatchCtrl()
 {
+	
 }
 
 IMPLEMENT_CONOBJECT(GuiSwatchCtrl);
 
-
 void GuiSwatchCtrl::onRender(Point2I offset, const RectI &updateRect)
 {
-   if ( !mProfile->mOpaque )
-   {
+   //if ( !mProfile->mOpaque )
+   //{
       RectI ctrlRect = getClientRect();
       ctrlRect.point += offset;
 
       // Draw border.
 
-      if( mProfile->mBorder != 0 )
-      {
-         GFX->getDrawUtil()->drawRectFill( ctrlRect, mProfile->mBorderColor );
-         ctrlRect.inset( mProfile->mBorderThickness, mProfile->mBorderThickness );
-      }
+      //if( mProfile->mBorder != 0 )
+      //{
+      //   GFX->getDrawUtil()->drawRectFill( ctrlRect, mProfile->mBorderColor );
+      //   ctrlRect.inset( mProfile->mBorderThickness, mProfile->mBorderThickness );
+      //}
 
-		//GFX->getDrawUtil()->drawRectFill( splitterRect, mProfile->mFillColor );
-   }
+		GFX->getDrawUtil()->drawRectFill(ctrlRect, mFillColor);
+   //}
 
    Parent::onRender( offset, updateRect );
 }
