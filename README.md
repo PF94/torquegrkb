@@ -2,9 +2,9 @@
 
 MIT Licensed Open Source version of [Torque 3D](http://torque3d.org) from [GarageGames](http://www.garagegames.com)
 
-# New additions
-- urlenc
-- guiswatchctrl
+# What's new
+- urlEnc function
+- guiSwatchCtrl
 - updated libpng
 
 # License 
