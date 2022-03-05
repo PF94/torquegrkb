@@ -3,8 +3,9 @@
 MIT Licensed Open Source version of [Torque 3D](http://torque3d.org) from [GarageGames](http://www.garagegames.com)
 
 # What's new
-- urlEnc function
-- guiSwatchCtrl
+- urlEnc and urlDec functions
+- Platform related functions (isWindows, isMacintosh, isLinux)
+- guiSwatchCtrl (colorable just like in Blockland!)
 - updated libpng
 
 # License 
