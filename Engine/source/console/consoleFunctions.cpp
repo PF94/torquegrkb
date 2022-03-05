@@ -2799,8 +2799,8 @@ DefineEngineFunction( getMaxDynamicVerts, S32, (),,
 
 // https://stackoverflow.com/a/29962178
 DefineEngineFunction(urlEnc, String, (String str), ,
-	"Get the encoded bullshit thing for the URL thing."
-	"@return the encoded url")
+	"Get the encoded string, useful for URLs."
+	"@return the encoded string")
 {
 	String new_str = "";
 	char c;
@@ -2825,4 +2825,82 @@ DefineEngineFunction(urlEnc, String, (String str), ,
 		}
 	}
 	return new_str;
+}
+
+// https://stackoverflow.com/a/29962178
+DefineEngineFunction(urlDec, String, (String str), ,
+	"Get the decoded URL string."
+	"@return the decoded string")
+{
+    String ret;
+    char ch;
+    int i, ii, len = str.length();
+
+    for (i=0; i < len; i++){
+        if(str[i] != '%'){
+            if(str[i] == '+')
+                ret += ' ';
+            else
+                ret += str[i];
+        }else{
+            sscanf(str.substr(i + 1, 2).c_str(), "%x", &ii);
+            ch = static_cast<char>(ii);
+            ret += ch;
+            i = i + 2;
+        }
+    }
+    return ret;
+}
+
+DefineEngineFunction(isWindows, bool, (), ,
+	""
+	"@return True if this is running on Microsoft Windows; false otherwise.\n\n"
+	"@ingroup Platform")
+{
+#ifdef TORQUE_OS_WIN
+	return true;
+#else
+	return false;
+#endif
+}
+
+
+DefineEngineFunction(isMacintosh, bool, (), ,
+		""
+		"@return True if this is running natively on a Mac; false otherwise.\n\n"
+		"@ingroup Platform")
+	{
+#ifdef TORQUE_OS_MAC
+		return true;
+#else
+		return false;
+#endif
+}
+
+DefineEngineFunction(isLinux, bool, (), ,
+	""
+	"@return True if this is running natively on Linux; false otherwise.\n\n"
+	"@ingroup Platform")
+{
+#ifdef TORQUE_OS_LINUX
+	return true;
+#else
+	return false;
+#endif
+}
+
+DefineConsoleFunction(getPlatform, const char *, (), ,
+	"@return The name of the operating system the user is running.\n\n"
+	"@ingroup Platform")
+{
+#ifdef TORQUE_OS_WIN
+	return "Win";
+#elif defined TORQUE_OS_MAC
+	return "Mac";
+#elif defined TORQUE_OS_LINUX
+	return "Linux";
+#else
+	Con::warnf("Unknown OS.");
+	return false;
+#endif
 }
