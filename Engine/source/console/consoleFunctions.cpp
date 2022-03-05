@@ -2904,3 +2904,9 @@ DefineConsoleFunction(getPlatform, const char *, (), ,
 	return false;
 #endif
 }
+
+DefineConsoleFunction(getLAN_BLID, int, (), ,
+	"@return The BGID for lan users. named after the Blockland func.\n\n")
+{
+	return 999999;
+}
